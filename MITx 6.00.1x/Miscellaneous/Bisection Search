@@ -1,0 +1,19 @@
+# Bisection Search for Square Roots
+
+x = float(input("Enter a positive number: "))
+epsilon = 0.001
+low = 1.0
+high = x
+guess = x/2.0
+steps = 0
+
+while (abs(guess**2 - x) > epsilon):
+    steps += 1
+    print("Looking for values between {} and {}".format(low,high))
+    if (guess**2 > x):
+        high = guess
+    elif (guess**2 < x):
+        low = guess
+    guess = (high+low)/2
+print("Square root of {} is {}".format(x,round(guess,5)))
+print("Steps taken: {}".format(steps))
