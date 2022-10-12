@@ -1,0 +1,50 @@
+# Problem 3
+# author: @raj-ch017
+
+"""
+Write a program that prints the longest substring of s in which the letters occur in alphabetical order. 
+For example, if s = 'azcbobobegghakl', then your program should print
+
+Longest substring in alphabetical order is: beggh
+In the case of ties, print the first substring. For example, if s = 'abcbcd', then your program should print
+
+Longest substring in alphabetical order is: abc
+
+Note: This problem may be challenging. We encourage you to work smart. If you've spent more than a few hours on this problem, 
+we suggest that you move on to a different part of the course. 
+If you have time, come back to this problem after you've had a break and cleared your head.
+"""
+
+s = 'zrppllxicmpu'
+out_string = ''
+substring_len = []
+count = 1
+
+for x in range(len(s)-1):
+    if ord(s[x+1]) >= ord(s[x]):
+        count += 1 
+    else:
+        substring_len.append(count)
+        count = 1
+
+
+
+if count == len(s):
+    print("Longest string in alphabetical order is:",s)
+elif count > max(substring_len):
+    substring_len.append(count)
+    max_val = max(substring_len)
+    max_index = substring_len.index(max_val)
+    sum = 0
+    for z in range(max_index):
+        sum = sum + substring_len[z]
+    out_string = s[sum:sum+max_val]
+    print("Longest string in alphabetical order is:",out_string)
+else:
+    max_val = max(substring_len)
+    max_index = substring_len.index(max_val)
+    sum = 0
+    for z in range(max_index):
+        sum = sum + substring_len[z]
+    out_string = s[sum:sum+max_val]
+    print("Longest string in alphabetical order is:",out_string)
