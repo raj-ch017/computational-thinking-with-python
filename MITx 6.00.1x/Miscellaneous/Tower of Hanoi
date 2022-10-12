@@ -1,0 +1,18 @@
+# Tower of Hanoi Using Recursion
+
+
+
+def print_info(fr,to):
+    print("Moving from: {} to {}".format(fr,to))
+
+def moving(n,fr,to,spare):
+    #step += 1
+    if n == 1:
+        print_info(fr,to)
+    else:
+        moving(n-1,fr,spare,to)
+        moving(1,fr,to,spare)
+        moving(n-1,spare,to,fr) 
+    #print(step)
+
+moving(3 ,'A','C','B')
