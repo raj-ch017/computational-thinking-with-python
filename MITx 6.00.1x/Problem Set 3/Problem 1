@@ -2,7 +2,7 @@
 # author: @raj-ch017
 
 """
-Is the Word Guessed
+Is the Word Guessed [10.0/10.0 points (graded)]
 
 Please read the Hangman Introduction before starting this problem. 
 We'll start by writing 3 simple functions that will help us easily code the Hangman problem. 
