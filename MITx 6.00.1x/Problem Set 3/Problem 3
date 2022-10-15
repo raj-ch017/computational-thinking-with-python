@@ -2,7 +2,7 @@
 # author: @raj-ch017
 
 """
-Printing Out all Available Letters
+Printing Out all Available Letters [10.0/10.0 points (graded)]
 
 Next, implement the function getAvailableLetters that takes in one parameter - a list of letters, lettersGuessed. 
 This function returns a string that is comprised of lowercase English letters - all lowercase English letters that are not in lettersGuessed.
