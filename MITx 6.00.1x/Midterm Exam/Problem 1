@@ -1,0 +1,46 @@
+# Problem 1 [10.0/10.0 points (graded)]
+# author: @raj-ch017
+
+"""
+
+Implement a function called closest_power that meets the specifications below.
+
+      def closest_power(base, num):
+          '''
+          base: base of the exponential, integer > 1
+          num: number you want to be closest to, integer > 0
+          Find the integer exponent such that base**exponent is closest to num.
+          Note that the base**exponent may be either greater or smaller than num.
+          In case of a tie, return the smaller value.
+          Returns the exponent.
+          '''
+
+For example,
+
+      closest_power(3,12) returns 2
+      closest_power(4,12) returns 2
+      closest_power(4,1) returns 0
+"""
+
+def closest_power(base,num):
+    if type(num) != int:
+        num = int(num)
+    if type(base) != int:
+        base = int(base)
+
+    exp = 0
+    diff = abs(num - base**exp)
+
+    if base > 1 and num > 0:
+        if (num == 1 or num < base):
+            return 0
+        elif (base == num):
+            return 1
+        while (base**exp != num):
+            exp += 1
+            the_diff = abs(num - base**exp)
+            if the_diff < diff:
+                diff = the_diff
+            elif the_diff >= diff:
+                return exp - 1
+                break
