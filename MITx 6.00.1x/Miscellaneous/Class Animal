@@ -1,0 +1,103 @@
+# Classes and Inheritence
+
+class Animal:
+    def __init__(self,age=""):
+        self.age = age
+        self.name = None
+
+    def get_age(self):
+        return self.age
+    
+    def get_name(self):
+        return self.name
+
+    def set_age(self,new_age):
+        self.age = new_age
+
+    def set_name(self,new_name):
+        self.name = new_name
+
+    def __str__(self):
+        return "animal:" + str(self.name) + ":" + str(self.age)
+
+class Cat(Animal):
+    def speak(self):
+        return "Cat says: meow"
+
+    def __str__(self):
+        return "Cat:" + str(self.name) + ":" + str(self.age)
+
+class Person(Animal):
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+        self.friends = []
+
+    def get_friends(self):
+        print(self.friends)
+
+    def add_friend(self,fname):
+        self.friends.append(fname)
+
+    def __str__(self):
+        return "Person:" + str(self.name) + ":" + str(self.age)
+
+import random
+
+class Student(Person):
+    def __init__(self,name,age,major):
+        Person.__init__(self,name,age)
+        self.major = major
+        self.major_change = 0
+
+    def change_major(self,new_major):
+        self.major = new_major
+        self.major_change += 1
+
+    def get_major(self):
+        print(self.major)
+        if self.major_change != 0:
+            print("{} has changed major".format(self.name))
+        else:
+            print("{} hasn't changed major".format(self.name))
+
+    def speak(self):
+        val = random.random()
+        if val <= 0.25:
+            print("It's study time!")
+        elif val > 0.25 and val <= 0.50:
+            print("I am hungry, let's eat something!")
+        elif val > 0.50 and val <= 0.75:
+            print("I am going to take a nap!")
+        else:
+            print("Time to read a book.")
+
+    def __str__(self):
+        return "Student:" + str(self.name) + ":" + str(self.age) + ":" + str(self.major)
+
+animal1 = Animal(2)
+animal1.set_name("Rambo")
+#print(animal1.speak())
+#print(animal1)
+
+cat1 = Cat(3)
+cat1.set_name("Tiger")
+#print(cat1.speak())
+#print(cat1)
+
+person1 = Person("Rajdeep",23)
+#print(person1)
+#person1.get_friends()
+#person1.add_friend("McKenna")
+#person1.get_friends()
+
+student1 = Student("Rajdeep",23,"Mechanical Engineering")
+#print(student1)
+student1.change_major("Cognitive Science")
+#print(student1)
+student1.speak()
+student1.get_major()
+
+student2 = Student("Soumen",22,"Mechanical Engineering")
+student2.speak()
+student2.get_major()
