@@ -1,0 +1,13 @@
+# Fibonacci Using Dictionaries
+
+def fibo_efficient(num,aDict):
+
+    if num in aDict:
+        return aDict[num]
+
+    else:
+        ans = fibo_efficient(num-1,aDict) + fibo_efficient(num-2,aDict)
+        aDict[num] = ans
+        return ans
+
+print(fibo_efficient(5,{1:1,2:2}))
