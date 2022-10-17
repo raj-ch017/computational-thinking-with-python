@@ -1,0 +1,28 @@
+# Problem 1 [10.0/10.0 points (graded)]
+# author: @raj-ch017
+
+"""
+
+      Write a Python function that takes in a string and prints out a version of this string that does not contain any vowels, 
+      according to the specification below. Vowels are uppercase and lowercase 'a', 'e', 'i', 'o', 'u'.
+
+      For example:
+      
+      if s = "This is great!" then print_without_vowels will print Ths s grt!. 
+      If s = "a" then print_without_vowels will print the empty string .
+      
+      You will not be able to see the test cases for this question. This will test your ability to come up with your own test cases. 
+      
+"""
+
+#code:
+
+def print_without_vowels(in_str):
+    vowel_list = ["a","e","i","o","u","A","E","I","O","U"]
+    out_str = ""
+
+    for char in in_str:
+        if char not in vowel_list:
+            out_str = out_str + char
+
+    print(out_str)
