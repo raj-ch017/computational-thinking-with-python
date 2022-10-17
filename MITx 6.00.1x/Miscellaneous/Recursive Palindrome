@@ -1,0 +1,41 @@
+# author: @raj-ch017
+
+"""
+Lecture 2: Functions
+
+Practice Exercise
+
+"""
+
+def isIn(char, aStr):
+    '''
+    char: a single character
+    aStr: an alphabetized string / string in alphabetical order
+    
+    returns: True if char is in aStr; False otherwise
+    '''
+
+    val = len(aStr)
+
+    if val <= 1:
+        if val == 0 and aStr == char:
+            return True
+        elif val == 1 and aStr == char:
+            return True
+        else:
+            return False
+
+    elif ord(aStr[val//2]) < ord(char):
+        return isIn(char,aStr[(val//2)+1:])
+
+    elif ord(aStr[val//2]) > ord(char):
+        return isIn(char,aStr[:val//2])
+
+    else:
+        return True
+
+print(isIn('a', 'abcgijqrsuvxy'))
+
+
+    
+
