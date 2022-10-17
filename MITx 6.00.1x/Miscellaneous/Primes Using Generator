@@ -1,0 +1,27 @@
+#GenPrimes
+
+def genPrimes():
+    
+    prime_list = [2]
+    yield prime_list[0]
+    checker = 3
+    count = 0
+
+    while True:
+        for val in prime_list:
+            if checker % val != 0:
+                count += 1
+        if count == len(prime_list):
+            prime_list.append(checker)
+            yield checker
+            count = 0
+            checker += 1
+        else:
+            checker += 1
+            count = 0
+
+out = genPrimes()
+
+for i in range(50):
+    print(out.__next__())
+
