@@ -1,0 +1,131 @@
+# Problem 2 [12.857142857142856/15.0 points (graded)]
+# author: @raj-ch017
+
+"""
+
+      You are given the following definitions:
+
+      A run of monotonically increasing numbers means that a number at position k+1 in the 
+      sequence is greater than or equal to the number at position k in the sequence.
+
+      A run of monotonically decreasing numbers means that a number at position k+1 in the 
+      sequence is less than or equal to the number at position k in the sequence.
+      
+      Implement a function that meets the specifications below.
+
+          def longest_run(L):
+              """
+              Assumes L is a list of integers containing at least 2 elements.
+              Finds the longest run of numbers in L, where the longest run can
+              either be monotonically increasing or monotonically decreasing. 
+              In case of a tie for the longest run, choose the longest run 
+              that occurs first.
+              Does not modify the list.
+              Returns the sum of the longest run. 
+              """
+      For example:
+
+          If L = [10, 4, 3, 8, 3, 4, 5, 7, 7, 2] then the longest run of monotonically increasing numbers
+          in L is [3, 4, 5, 7, 7] and the longest run of monotonically decreasing numbers in L is [10, 4, 3]. 
+          Your function should return the value 26 because the longest run of monotonically increasing integers is longer than the
+          longest run of monotonically decreasing numbers.
+          
+          If L = [5, 4, 10] then the longest run of monotonically increasing numbers in L is [4, 10] 
+          and the longest run of monotonically decreasing numbers in L is [5, 4].
+          Your function should return the value 9 because the longest run of monotonically decreasing integers occurs before the longest run 
+          of monotonically increasing numbers.            
+          
+"""
+
+#code:
+
+def longest_run(L):
+    """
+    Assumes L is a list of integers containing at least 2 elements.
+    Finds the longest run of numbers in L, where the longest run can
+    either be monotonically increasing or monotonically decreasing. 
+    In case of a tie for the longest run, choose the longest run 
+    that occurs first.
+    Does not modify the list.
+    Returns the sum of the longest run. 
+    """
+
+    inc_list = []
+    inc_index = []
+    dec_list = []
+    dec_index = []
+    inc_dict = {}
+    dec_dict = {}
+    index = 1
+
+    while(index <= (len(L))-1):
+        while index <= len(L)-1 and L[index] >= L[index-1]:
+            inc_index.append(index-1)
+            index += 1
+            if index > len(L) - 1:
+                break
+
+        inc_index.append(index-1)   
+        inc_list = list(L[inc_index[0]:inc_index[-1]+1])
+        inc_dict[str(inc_index[0])] = inc_list
+        inc_list = []
+        inc_index = []
+
+        while index <= len(L)-1 and L[index] <= L[index-1]:
+            dec_index.append(index-1)
+            index += 1
+            if index > len(L) - 1:
+                break
+
+        dec_index.append(index-1)
+        dec_list = list(L[dec_index[0]:dec_index[-1]+1])
+        dec_dict[str(dec_index[0])] = dec_list
+        dec_list = []
+        dec_index = []
+
+    # largest sequence in increasing
+    inc_val_list = inc_dict.values()
+    out_index1 = 0
+    largest_valinc = 0
+    the_index1 = 0
+    list1 = []
+
+    for values in inc_val_list:
+        the_index1 += 1
+        if len(values) > largest_valinc:
+            out_index1 = the_index1
+            largest_valinc = len(values)
+            list1 = values
+    
+    key_listinc = list(inc_dict)
+    index_inc = key_listinc[out_index1-1]
+    tup1 = (index_inc,list1)
+
+    # largest sequence in decreasing
+    dec_val_list = dec_dict.values()
+    out_index2 = 0
+    largest_valdec = 0
+    the_index2 = 0
+    list2 = []
+
+    for values in dec_val_list:
+        the_index2 += 1
+        if len(values) > largest_valdec:
+            out_index2 = the_index2
+            largest_valdec = len(values)
+            list2 = values
+
+    key_listdec = list(dec_dict)
+    index_dec = key_listdec[out_index2-1]
+    tup2 = (index_dec,list2)
+
+    # cross check and sum
+    if largest_valdec > largest_valinc:
+        return sum(list2)
+    elif largest_valinc > largest_valdec:
+        return sum(list1)
+    else:
+        if int(tup1[0]) > int(tup2[0]):
+            return sum(list2)
+        else:
+            return sum(list1)
