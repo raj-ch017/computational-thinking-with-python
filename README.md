@@ -8,12 +8,16 @@ MIT's Introduction to Computer Science and Programming Using Python
 
 <h2>
 <p align = "center">
-This repository contains:
+Learning Objectives:
 </p>
 </h2>
 
-  - MITx 6.00.1x: Edx course version of 6.0001
-  - MIT OCW 6.0001: Lectures and problem sets uploaded in OpenCourseWare
+- A Notion of computation
+- The Python programming language
+- Some simple algorithms
+- Testing and debugging
+- An informal introduction to algorithmic complexity
+- Data structures
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
