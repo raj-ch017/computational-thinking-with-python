@@ -19,6 +19,16 @@ Learning Objectives:
 - An informal introduction to algorithmic complexity
 - Data structures
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<h2>
+<p align = "center">
+Documentation
+</p>
+</h2>
 
-![image](https://user-images.githubusercontent.com/96816530/196263972-42829464-eb09-4689-ad1a-c8fc0aa9a170.png)
+<p align = "center" width="100%">
+      <img width="75%" src="https://user-images.githubusercontent.com/96816530/196263972-42829464-eb09-4689-ad1a-c8fc0aa9a170.png">
+</p>      
+
+---
+
+#### This repository has been marked completed.
