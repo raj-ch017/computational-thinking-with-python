@@ -4,7 +4,7 @@ MIT's Introduction to Computer Science and Programming Using Python
 </p>
 </h1>
 
-6.0001 Introduction to Computer Science and Programming in Python is intended for students with little or no programming experience. It aims to provide students with an understanding of the role computation can play in solving problems and to help students, regardless of their major, feel justifiably confident of their ability to write small programs that allow them to accomplish useful goals. The class will use the Python 3.5 programming language.
+This XSeries is designed for learners with no prior experience in computer science or programming. It emphasizes breadth over depth, providing a broad foundation in computational thinking and programming with Python.
 
 <h2>
 <p align = "center">
@@ -12,12 +12,19 @@ Learning Objectives:
 </p>
 </h2>
 
-- A Notion of computation
-- The Python programming language
-- Some simple algorithms
-- Testing and debugging
-- An informal introduction to algorithmic complexity
-- Data structures
+<h3> Introduction to Computer Science and Programming Using Python </h3>
+
+- Basics of computation
+- Python programming
+- Algorithms, testing, debugging
+- Intro to algorithmic complexity and data structures
+
+<h3> Introduction to Computational Thinking and Data Science </h3>
+
+- Applied computational problem solving
+- Data science fundamentals
+- Exposure to a variety of computational tools and techniques
+
 
 <h2>
 <p align = "center">
@@ -26,9 +33,8 @@ Documentation
 </h2>
 
 <p align = "center" width="100%">
-      <img width="75%" src="https://user-images.githubusercontent.com/96816530/196263972-42829464-eb09-4689-ad1a-c8fc0aa9a170.png">
+      <img width="75%" src= "https://github.com/user-attachments/assets/1a30959c-c959-4c2b-a379-2590d654d5ae">
 </p>      
 
 ---
 
-#### Adding .ipynb files for problem sets
